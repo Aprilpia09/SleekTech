@@ -14,6 +14,8 @@
 
   <!-- Add any other meta tags or custom CSS links here -->
   <meta name="description" content="{{ shop.meta_description }}">
+  
+  {{ content_for_header }} <!-- Required for Shopify's theme structure -->
 </head>
 
 <body>
@@ -52,4 +54,31 @@
             <a href="{{ product.url }}">
               <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}">
               <h3>{{ product.title }}</h3>
-              <
+              <p>{{ product.price | money }}</p>
+            </a>
+          </div>
+        {% endfor %}
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; {{ 'now' | date: '%Y' }} SleekTech. All rights reserved.</p>
+    <nav>
+      <ul>
+        <li><a href="{{ shop.url }}/pages/about-us">About Us</a></li>
+        <li><a href="{{ shop.url }}/pages/contact">Contact</a></li>
+        <li><a href="{{ shop.url }}/pages/privacy-policy">Privacy Policy</a></li>
+        <li><a href="{{ shop.url }}/pages/terms-of-service">Terms of Service</a></li>
+      </ul>
+    </nav>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="{{ 'theme.js' | asset_url }}"></script>
+
+  {{ content_for_footer }} <!-- Required for Shopify's theme structure -->
+</body>
+
+</html>
