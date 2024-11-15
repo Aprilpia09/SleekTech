@@ -2,16 +2,16 @@
 {
   "@context": "https://schema.org",
   "@type": "Product",
-  "name": "{{ product.title }}",
-  "image": "{{ product.featured_image | img_url: 'original' }}",
-  "description": "{{ product.description | strip_html | truncate: 160 }}",
-  "sku": "{{ product.sku }}",
+  "name": "{{ product.title }}", 
+  "image": "{{ product.featured_image | img_url: 'medium' }}", 
+  "description": "{{ product.description | strip_html | truncate: 160 }}", 
+  "sku": "{{ product.sku }}", 
   "offers": {
     "@type": "Offer",
-    "priceCurrency": "USD",
-    "price": "{{ product.price | money_without_currency }}",
-    "url": "{{ product.url }}",
-    "availability": "https://schema.org/InStock"
+    "priceCurrency": "{{ shop.currency }}", 
+    "price": "{{ product.price | money_without_currency }}", 
+    "url": "{{ product.url }}", 
+    "availability": "{% if product.available %}https://schema.org/InStock{% else %}https://schema.org/OutOfStock{% endif %}"
   }
 }
 </script>
