@@ -14,8 +14,11 @@
 
   <!-- Add any other meta tags or custom CSS links here -->
   <meta name="description" content="{{ shop.meta_description }}">
-  
+
   {{ content_for_header }} <!-- Required for Shopify's theme structure -->
+
+  <!-- Include Product Schema -->
+  {% include 'product-schema' %}
 </head>
 
 <body>
