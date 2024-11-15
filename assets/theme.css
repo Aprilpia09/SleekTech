@@ -1,0 +1,49 @@
+
+/* Glossy, premium look for header */
+header {
+    background: linear-gradient(145deg, #333, #222); /* Soft gradient for modern look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+/* Hero Section: Adding glossy text effect */
+.hero h1 {
+    font-size: 4rem;
+    color: #fff;
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.4); /* Glossy shadow for premium effect */
+}
+
+/* CTA Button: Glossy red */
+.hero .cta-button {
+    background: linear-gradient(145deg, #ff3333, #e60000); /* Glossy red */
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 25px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Soft shadow for elevation */
+}
+
+/* Hover effect for the button */
+.hero .cta-button:hover {
+    background: linear-gradient(145deg, #e60000, #ff3333); /* Subtle color shift */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4); /* Increased shadow on hover */
+}
+
+/* Footer: Glossy dark background */
+footer {
+    background: linear-gradient(145deg, #1a1a1a, #111);
+    color: #e0e0e0;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.7); /* Glossy inset shadow */
+}
+
+/* Navigation: Sleek hover effects */
+nav ul li a {
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ff3333; /* Red accent on hover for sleek look */
+    text-decoration: underline; /* Premium hover effect */
+}
