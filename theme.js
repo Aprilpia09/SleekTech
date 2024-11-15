@@ -60,10 +60,12 @@ galleryImages.forEach(img => {
 });
 
 // Form Validation (Optional)
-document.querySelector("form").addEventListener("submit", function(event) {
-    const email = document.querySelector("#email") ? document.querySelector("#email").value : null;
-    if (email && !email.includes("@")) {
-        alert("Please enter a valid email address!");
-        event.preventDefault();
-    }
+document.querySelectorAll("form").forEach(form => {
+    form.addEventListener("submit", function(event) {
+        const email = document.querySelector("#email") ? document.querySelector("#email").value : null;
+        if (email && !email.includes("@")) {
+            alert("Please enter a valid email address!");
+            event.preventDefault();
+        }
+    });
 });
