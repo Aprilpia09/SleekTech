@@ -1,125 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
+/* Glossy, premium look for header */
+header {
+    background: linear-gradient(145deg, #333, #222); /* Soft gradient for modern look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ page_title }} | SleekTech</title>
+/* Hero Section: Adding glossy text effect */
+.hero h1 {
+    font-size: 4rem;
+    color: #fff;
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.4); /* Glossy shadow for premium effect */
+}
 
-  <!-- Link to the theme styles -->
-  <link href="{{ 'theme.css' | asset_url }}" rel="stylesheet">
+/* CTA Button: Glossy red */
+.hero .cta-button {
+    background: linear-gradient(145deg, #ff3333, #e60000); /* Glossy red */
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 25px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Soft shadow for elevation */
+}
 
-  <!-- Favicon (Optional) -->
-  <link rel="icon" type="image/png" href="{{ 'favicon.png' | asset_url }}">
+/* Hover effect for the button */
+.hero .cta-button:hover {
+    background: linear-gradient(145deg, #e60000, #ff3333); /* Subtle color shift */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4); /* Increased shadow on hover */
+}
 
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="{{ shop.meta_description }}">
-  <meta property="og:title" content="{{ page_title }}">
-  <meta property="og:description" content="{{ shop.meta_description }}">
-  <meta property="og:image" content="{{ shop.logo | img_url: 'original' }}">
-  <meta name="twitter:card" content="summary_large_image">
+/* Footer: Glossy dark background */
+footer {
+    background: linear-gradient(145deg, #1a1a1a, #111);
+    color: #e0e0e0;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.7); /* Glossy inset shadow */
+}
 
-  <!-- Google Fonts (if needed) -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Helvetica:wght@400&display=swap" rel="stylesheet">
+/* Navigation: Sleek hover effects */
+nav ul li a {
+    transition: color 0.3s ease;
+}
 
-  <!-- Custom Scripts (Analytics, tracking) -->
-  <script src="your-analytics-script.js"></script>
-</head>
-
-<body>
-
-  <!-- HEADER -->
-  <header>
-    <nav>
-      <ul>
-        <li><a href="{{ shop.url }}">Home</a></li>
-        <li><a href="{{ shop.url }}/collections/all">Shop</a></li>
-        <li><a href="{{ shop.url }}/pages/about-us">About Us</a></li>
-        <li><a href="{{ shop.url }}/pages/contact">Contact</a></li>
-        <li><a href="{{ shop.url }}/blogs/news">Blog</a></li>
-        <li><a href="{{ shop.url }}/pages/faq">FAQ</a></li>
-        <li>
-          {% if customer %}
-            <a href="/account">Account</a>
-            <a href="/account/logout">Logout</a>
-          {% else %}
-            <a href="/account/login">Login</a>
-            <a href="/account/register">Register</a>
-          {% endif %}
-        </li>
-        <li><a href="/cart">Cart ({{ cart.item_count }})</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <!-- HERO SECTION -->
-  <section class="hero">
-    <h1>Welcome to SleekTech</h1>
-    <p>Premium, Modern Shopify Theme for Tech & Electronics Stores</p>
-    <a href="{{ shop.url }}/collections/all" class="cta-button">Shop Now</a>
-  </section>
-
-  <!-- FEATURED PRODUCTS -->
-  <section class="featured-products">
-    <h2>Featured Products</h2>
-    <div class="product-grid">
-      {% for product in collections.frontpage.products %}
-        <div class="product-item">
-          <a href="{{ product.url }}">
-            <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}">
-            <h3>{{ product.title }}</h3>
-            <p>{{ product.price | money }}</p>
-          </a>
-        </div>
-      {% endfor %}
-    </div>
-  </section>
-
-  <!-- ABOUT US SECTION -->
-  <section class="about-us">
-    <h2>About SleekTech</h2>
-    <p>We specialize in providing premium tech products and accessories. Our goal is to offer cutting-edge technology and exceptional customer service.</p>
-  </section>
-
-  <!-- BLOG SECTION -->
-  <section class="blog">
-    <h2>Latest Blog Posts</h2>
-    <div class="blog-posts">
-      {% for article in blogs['news'].articles %}
-        <div class="blog-post">
-          <a href="{{ article.url }}">
-            <h3>{{ article.title }}</h3>
-            <p>{{ article.excerpt }}</p>
-          </a>
-        </div>
-      {% endfor %}
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-navigation">
-      <ul>
-        <li><a href="/pages/terms-and-conditions">Terms & Conditions</a></li>
-        <li><a href="/pages/privacy-policy">Privacy Policy</a></li>
-        <li><a href="/pages/shipping-info">Shipping Info</a></li>
-        <li><a href="/pages/return-policy">Return Policy</a></li>
-      </ul>
-    </div>
-
-    <div class="social-media">
-      <a href="https://www.facebook.com/yourpage" target="_blank">Facebook</a>
-      <a href="https://www.instagram.com/yourpage" target="_blank">Instagram</a>
-      <a href="https://twitter.com/yourpage" target="_blank">Twitter</a>
-    </div>
-
-    <div class="footer-info">
-      <p>&copy; {{ 'now' | date: "%Y" }} SleekTech. All rights reserved.</p>
-    </div>
-  </footer>
-
-  <!-- Custom Scripts -->
-  <script src="{{ 'theme.js' | asset_url }}"></script>
-  
-</body>
-</html>
+nav ul li a:hover {
+    color: #ff3333; /* Red accent on hover for sleek look */
+    text-decoration: underline; /* Premium hover effect */
+}
