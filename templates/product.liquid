@@ -1,1 +1,61 @@
+{% extends 'theme.liquid' %}
+
+{% block content %}
+  <!-- Product Section -->
+  <div class="product-detail-container">
+    <!-- Product Title -->
+    <h1 class="product-title">{{ product.title }}</h1>
+
+    <!-- Product Image -->
+    <div class="product-image">
+      <img src="{{ product.featured_image | img_url: 'large' }}" alt="{{ product.title }}">
+    </div>
+
+    <!-- Product Price -->
+    <div class="product-price">
+      <p>{{ product.price | money }}</p>
+    </div>
+
+    <!-- Product Description -->
+    <div class="product-description">
+      <p>{{ product.description }}</p>
+    </div>
+
+    <!-- Product Availability (In Stock/Out of Stock) -->
+    <div class="product-availability">
+      {% if product.available %}
+        <p>In Stock</p>
+      {% else %}
+        <p>Out of Stock</p>
+      {% endif %}
+    </div>
+
+    <!-- Product Add to Cart Form -->
+    <div class="product-add-to-cart">
+      <form action="/cart/add" method="post">
+        <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+        <button type="submit">Add to Cart</button>
+      </form>
+    </div>
+
+    <!-- Product Schema JSON-LD for SEO -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "{{ product.title }}",
+        "image": "{{ product.featured_image | img_url: 'medium' }}",
+        "description": "{{ product.description | strip_html | truncate: 160 }}",
+        "sku": "{{ product.sku }}",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "{{ shop.currency }}",
+          "price": "{{ product.price | money_without_currency }}",
+          "url": "{{ product.url }}",
+          "availability": "{% if product.available %}https://schema.org/InStock{% else %}https://schema.org/OutOfStock{% endif %}"
+        }
+      }
+    </script>
+  </div>
+{% endblock %}
 
