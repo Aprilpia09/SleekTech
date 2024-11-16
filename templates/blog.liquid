@@ -1,35 +1,74 @@
-{% extends 'theme.liquid' %}
+<!DOCTYPE html>
+<html lang="en">
 
-{% block content %}
-  <div class="blog-container">
-    <h1 class="blog-title">{{ blog.title }}</h1>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ blog.title }} | SleekTech Blog</title>
 
-    <!-- Blog Posts Listing -->
-    <div class="blog-posts-list">
+  <!-- Link to the theme styles (CSS) -->
+  <link href="{{ 'theme.css' | asset_url }}" rel="stylesheet">
+
+  <!-- Favicon (Optional) -->
+  <link rel="icon" type="image/png" href="{{ 'favicon.png' | asset_url }}">
+
+  <!-- Add any other meta tags or custom CSS links here -->
+  <meta name="description" content="{{ blog.meta_description }}">
+
+  {{ content_for_header }} <!-- Required for Shopify's theme structure -->
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="{{ shop.url }}">Home</a></li>
+        <li><a href="{{ shop.url }}/collections/all">Shop</a></li>
+        <li><a href="{{ shop.url }}/pages/about-us">About Us</a></li>
+        <li><a href="{{ shop.url }}/pages/contact">Contact</a></li>
+        <li><a href="{{ shop.url }}/blogs/news">Blog</a></li>
+        <li><a href="{{ shop.url }}/pages/faq">FAQ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <h1>{{ blog.title }}</h1>
+    <div class="blog-description">{{ blog.description }}</div>
+
+    <!-- Blog Posts -->
+    <div class="blog-posts">
       {% for article in blog.articles %}
-        <div class="blog-post">
-          <h2 class="post-title">
-            <a href="{{ article.url }}">{{ article.title }}</a>
-          </h2>
-          <p class="post-excerpt">{{ article.excerpt | truncate: 150 }}</p>
-          <a href="{{ article.url }}" class="read-more">Read more</a>
-        </div>
+        <article>
+          <h2><a href="{{ article.url }}">{{ article.title }}</a></h2>
+          <p>{{ article.excerpt }}</p>
+          <a href="{{ article.url }}">Read more</a>
+        </article>
+      {% else %}
+        <p>No posts available.</p>
       {% endfor %}
     </div>
-    
-    <!-- Pagination for blog posts -->
-    <div class="pagination">
-      {% if blog.articles_count > blog.per_page %}
-        <div class="pagination-links">
-          {% if blog.previous_page %}
-            <a href="{{ blog.previous_page_url }}" class="prev-page">Previous</a>
-          {% endif %}
-          
-          {% if blog.next_page %}
-            <a href="{{ blog.next_page_url }}" class="next-page">Next</a>
-          {% endif %}
-        </div>
-      {% endif %}
-    </div>
-  </div>
-{% endblock %}
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; {{ 'now' | date: '%Y' }} SleekTech. All rights reserved.</p>
+    <nav>
+      <ul>
+        <li><a href="{{ shop.url }}/pages/about-us">About Us</a></li>
+        <li><a href="{{ shop.url }}/pages/contact">Contact</a></li>
+        <li><a href="{{ shop.url }}/pages/privacy-policy">Privacy Policy</a></li>
+        <li><a href="{{ shop.url }}/pages/terms-of-service">Terms of Service</a></li>
+      </ul>
+    </nav>
+  </footer>
+
+  <!-- Scripts (JS) -->
+  <script src="{{ 'theme.js' | asset_url }}"></script>
+
+  {{ content_for_footer }} <!-- Required for Shopify's theme structure -->
+</body>
+
+</html>
