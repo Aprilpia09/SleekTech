@@ -1,0 +1,21 @@
+{% extends 'theme.liquid' %}
+
+{% block content %}
+  <div class="collection-container">
+    <h1 class="collection-title">{{ collection.title }}</h1>
+    <div class="collection-description">{{ collection.description }}</div>
+
+    <!-- Display all products in the collection -->
+    <div class="product-grid">
+      {% for product in collection.products %}
+        <div class="product-item">
+          <a href="{{ product.url }}">
+            <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}">
+            <h2>{{ product.title }}</h2>
+            <p>{{ product.price | money }}</p>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}
