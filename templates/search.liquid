@@ -1,0 +1,23 @@
+{% extends 'theme.liquid' %}
+
+{% block content %}
+  <div class="search-results">
+    <h1>Search Results for: {{ search.terms }}</h1>
+
+    {% if search.results_count > 0 %}
+      <div class="search-products">
+        {% for result in search.results %}
+          <div class="product-item">
+            <a href="{{ result.url }}">
+              <img src="{{ result.image | img_url: 'medium' }}" alt="{{ result.title }}">
+              <h2>{{ result.title }}</h2>
+              <p>{{ result.price | money }}</p>
+            </a>
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p>No products found for your search.</p>
+    {% endif %}
+  </div>
+{% endblock %}
