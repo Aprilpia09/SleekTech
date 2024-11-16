@@ -15,10 +15,11 @@
   <!-- Add any other meta tags or custom CSS links here -->
   <meta name="description" content="{{ shop.meta_description }}">
 
-  {{ content_for_header }} <!-- Required for Shopify's theme structure -->
+  {{ content_for_header }} <!-- Shopify's required content for headers, like meta tags and scripts -->
 
   <!-- Include Product Schema (from snippets) -->
-  {% render 'product-schema' %} <!-- Updated to 'render' -->
+  {% render 'product-schema' %} <!-- This ensures SEO-friendly structured data for products -->
+
 </head>
 
 <body>
@@ -38,7 +39,25 @@
 
   <!-- MAIN CONTENT -->
   <main>
-    {{ content_for_layout }} <!-- This is required for Shopify to load the page content -->
+    {% if template == 'product' %}
+      <!-- Product Page -->
+      {% render 'product' %}
+    {% elsif template == 'collection' %}
+      <!-- Collection Page -->
+      {% render 'collection' %}
+    {% elsif template == 'blog' %}
+      <!-- Blog Page -->
+      {% render 'blog' %}
+    {% elsif template == 'search' %}
+      <!-- Search Results Page -->
+      {% render 'search' %}
+    {% elsif template == 'page' %}
+      <!-- Custom Static Page (e.g., About Us, Contact) -->
+      {% render 'page' %}
+    {% else %}
+      <!-- Default Page Rendering -->
+      {{ content_for_layout }}
+    {% endif %}
   </main>
 
   <!-- FOOTER -->
@@ -57,7 +76,7 @@
   <!-- Scripts (JS) -->
   <script src="{{ 'theme.js' | asset_url }}"></script>
 
-  {{ content_for_footer }} <!-- Required for Shopify's theme structure -->
+  {{ content_for_footer }} <!-- Shopify's required footer content -->
 </body>
 
 </html>
