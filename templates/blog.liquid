@@ -1,0 +1,35 @@
+{% extends 'theme.liquid' %}
+
+{% block content %}
+  <div class="blog-container">
+    <h1 class="blog-title">{{ blog.title }}</h1>
+
+    <!-- Blog Posts Listing -->
+    <div class="blog-posts-list">
+      {% for article in blog.articles %}
+        <div class="blog-post">
+          <h2 class="post-title">
+            <a href="{{ article.url }}">{{ article.title }}</a>
+          </h2>
+          <p class="post-excerpt">{{ article.excerpt | truncate: 150 }}</p>
+          <a href="{{ article.url }}" class="read-more">Read more</a>
+        </div>
+      {% endfor %}
+    </div>
+    
+    <!-- Pagination for blog posts -->
+    <div class="pagination">
+      {% if blog.articles_count > blog.per_page %}
+        <div class="pagination-links">
+          {% if blog.previous_page %}
+            <a href="{{ blog.previous_page_url }}" class="prev-page">Previous</a>
+          {% endif %}
+          
+          {% if blog.next_page %}
+            <a href="{{ blog.next_page_url }}" class="next-page">Next</a>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+{% endblock %}
