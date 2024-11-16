@@ -1,1 +1,34 @@
+<section class="hero">
+  <div class="hero-content">
+    <h1>{{ shop.name }}</h1>
+    <p>{{ 'Welcome to our store! Explore our amazing products.' }}</p>
+    <a href="{{ shop.url }}/collections/all" class="cta-button">Shop Now</a>
+  </div>
+  <div class="hero-image">
+    <img src="{{ 'hero-image.jpg' | asset_url }}" alt="Hero Image">
+  </div>
+</section>
+
+<style>
+  .hero {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #f4f4f4;
+  }
+  .hero-content {
+    max-width: 50%;
+  }
+  .cta-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  .hero-image img {
+    max-width: 100%;
+    height: auto;
+  }
+</style>
 
