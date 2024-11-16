@@ -1,18 +1,17 @@
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Product",
-  "name": "{{ product.title }}", 
-  "image": "{{ product.featured_image | img_url: 'medium' }}", 
-  "description": "{{ product.description | strip_html | truncate: 160 }}", 
-  "sku": "{{ product.sku }}", 
-  "offers": {
-    "@type": "Offer",
-    "priceCurrency": "{{ shop.currency }}", 
-    "price": "{{ product.price | money_without_currency }}", 
-    "url": "{{ product.url }}", 
-    "availability": "{% if product.available %}https://schema.org/InStock{% else %}https://schema.org/OutOfStock{% endif %}"
+[
+  {
+    "name": "Theme settings",
+    "settings": [
+      {
+        "type": "text",
+        "id": "store_name",
+        "label": "Store Name"
+      },
+      {
+        "type": "color",
+        "id": "primary_color",
+        "label": "Primary Color"
+      }
+    ]
   }
-}
-</script>
+]
