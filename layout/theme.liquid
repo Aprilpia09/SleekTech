@@ -39,44 +39,24 @@
 
   <!-- MAIN CONTENT -->
   <main>
+    {% section 'hero' %} <!-- Hero Section -->
+
     {% if template == 'product' %}
       <!-- Product Page -->
-      {% render 'product' %}
+      {% section 'product' %}
     {% elsif template == 'collection' %}
       <!-- Collection Page -->
-      {% render 'collection' %}
+      {% section 'collection' %}
     {% elsif template == 'blog' %}
       <!-- Blog Page -->
-      {% render 'blog' %}
+      {% section 'blog' %}
     {% elsif template == 'search' %}
       <!-- Search Results Page -->
-      {% render 'search' %}
+      {% section 'search' %}
     {% elsif template == 'page' %}
       <!-- Custom Static Page (e.g., About Us, Contact) -->
-      {% render 'page' %}
+      {% section 'page' %}
     {% else %}
       <!-- Default Page Rendering -->
       {{ content_for_layout }}
-    {% endif %}
-  </main>
-
-  <!-- FOOTER -->
-  <footer>
-    <p>&copy; {{ 'now' | date: '%Y' }} SleekTech. All rights reserved.</p>
-    <nav>
-      <ul>
-        <li><a href="{{ shop.url }}/pages/about-us">About Us</a></li>
-        <li><a href="{{ shop.url }}/pages/contact">Contact</a></li>
-        <li><a href="{{ shop.url }}/pages/privacy-policy">Privacy Policy</a></li>
-        <li><a href="{{ shop.url }}/pages/terms-of-service">Terms of Service</a></li>
-      </ul>
-    </nav>
-  </footer>
-
-  <!-- Scripts (JS) -->
-  <script src="{{ 'theme.js' | asset_url }}"></script>
-
-  {{ content_for_footer }} <!-- Shopify's required footer content -->
-</body>
-
-</html>
+    {% endif %
