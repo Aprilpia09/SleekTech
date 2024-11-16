@@ -1,11 +1,63 @@
-{% extends 'theme.liquid' %}
+<!DOCTYPE html>
+<html lang="en">
 
-{% block content %}
-  <!-- Page Content Section -->
-  <div class="page-content-container">
-    <h1 class="page-title">{{ page.title }}</h1>
-    <div class="page-body">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }} | SleekTech</title>
+
+  <!-- Link to the theme styles (CSS) -->
+  <link href="{{ 'theme.css' | asset_url }}" rel="stylesheet">
+
+  <!-- Favicon (Optional) -->
+  <link rel="icon" type="image/png" href="{{ 'favicon.png' | asset_url }}">
+
+  <!-- Add any other meta tags or custom CSS links here -->
+  <meta name="description" content="{{ page.meta_description }}">
+
+  {{ content_for_header }} <!-- Required for Shopify's theme structure -->
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="{{ shop.url }}">Home</a></li>
+        <li><a href="{{ shop.url }}/collections/all">Shop</a></li>
+        <li><a href="{{ shop.url }}/pages/about-us">About Us</a></li>
+        <li><a href="{{ shop.url }}/pages/contact">Contact</a></li>
+        <li><a href="{{ shop.url }}/blogs/news">Blog</a></li>
+        <li><a href="{{ shop.url }}/pages/faq">FAQ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <h1>{{ page.title }}</h1>
+    <div class="page-content">
       {{ page.content }}
     </div>
-  </div>
-{% endblock %}
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; {{ 'now' | date: '%Y' }} SleekTech. All rights reserved.</p>
+    <nav>
+      <ul>
+        <li><a href="{{ shop.url }}/pages/about-us">About Us</a></li>
+        <li><a href="{{ shop.url }}/pages/contact">Contact</a></li>
+        <li><a href="{{ shop.url }}/pages/privacy-policy">Privacy Policy</a></li>
+        <li><a href="{{ shop.url }}/pages/terms-of-service">Terms of Service</a></li>
+      </ul>
+    </nav>
+  </footer>
+
+  <!-- Scripts (JS) -->
+  <script src="{{ 'theme.js' | asset_url }}"></script>
+
+  {{ content_for_footer }} <!-- Required for Shopify's theme structure -->
+</body>
+
+</html>
