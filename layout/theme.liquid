@@ -59,4 +59,26 @@
     {% else %}
       <!-- Default Page Rendering -->
       {{ content_for_layout }}
-    {% endif %
+    {% endif %}
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; {{ 'now' | date: '%Y' }} SleekTech. All rights reserved.</p>
+    <nav>
+      <ul>
+        <li><a href="{{ shop.url }}/pages/about-us">About Us</a></li>
+        <li><a href="{{ shop.url }}/pages/contact">Contact</a></li>
+        <li><a href="{{ shop.url }}/pages/privacy-policy">Privacy Policy</a></li>
+        <li><a href="{{ shop.url }}/pages/terms-of-service">Terms of Service</a></li>
+      </ul>
+    </nav>
+  </footer>
+
+  <!-- Scripts (JS) -->
+  <script src="{{ 'theme.js' | asset_url }}"></script>
+
+  {{ content_for_footer }} <!-- Shopify's required footer content -->
+</body>
+
+</html>
