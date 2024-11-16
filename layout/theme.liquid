@@ -38,31 +38,7 @@
 
   <!-- MAIN CONTENT -->
   <main>
-    <!-- Hero Section: Add high-quality images/videos and a CTA button -->
-    <section class="hero">
-      <div class="hero-content">
-        <h1>Welcome to SleekTech</h1>
-        <p>Premium, Modern Shopify Theme for Tech & Electronics Stores</p>
-        <a href="{{ shop.url }}/collections/all" class="cta-button">Shop Now</a>
-      </div>
-    </section>
-
-    <!-- Featured Products -->
-    <section class="featured-products">
-      <h2>Featured Products</h2>
-      <div class="product-grid">
-        <!-- Loop through your products here -->
-        {% for product in collections.frontpage.products %}
-          <div class="product-item">
-            <a href="{{ product.url }}">
-              <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}">
-              <h3>{{ product.title }}</h3>
-              <p>{{ product.price | money }}</p>
-            </a>
-          </div>
-        {% endfor %}
-      </div>
-    </section>
+    {{ content_for_layout }} <!-- This is required for Shopify to load the page content -->
   </main>
 
   <!-- FOOTER -->
