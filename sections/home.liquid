@@ -1,0 +1,25 @@
+<section class="hero-section">
+  <div class="hero-container">
+    <h1>Welcome to Our Premium Store</h1>
+    <p>Your perfect shopping destination for premium products</p>
+    <a href="/collections/all" class="btn hero-btn">Shop Now</a>
+  </div>
+</section>
+
+<section class="featured-products">
+  <div class="section-header">
+    <h2>Featured Products</h2>
+    <p>Explore our best-selling products</p>
+  </div>
+  
+  <div class="product-cards">
+    {% for product in collections.featured.products %}
+      <div class="product-card">
+        <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}">
+        <p>{{ product.title }}</p>
+        <p>{{ product.price | money }}</p>
+        <a href="{{ product.url }}" class="btn">View Product</a>
+      </div>
+    {% endfor %}
+  </div>
+</section>
