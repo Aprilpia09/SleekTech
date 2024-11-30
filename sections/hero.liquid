@@ -10,32 +10,37 @@
 </section>
 
 <style>
+  /* Hero Section Styles */
   .hero {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 60px 20px;
-    background: linear-gradient(145deg, #1a1a1a, #333);
+    background: linear-gradient(145deg, #1a1a1a, #333); /* Dark gradient background */
     color: white;
   }
-  
+
+  /* Hero Content */
   .hero-content {
     max-width: 50%;
     text-align: left;
   }
 
+  /* Heading */
   .hero h1 {
     font-size: 4rem;
     font-weight: bold;
     text-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Glossy text effect */
   }
 
+  /* Subheading */
   .hero p {
     font-size: 1.2rem;
     margin-top: 10px;
     margin-bottom: 20px;
   }
 
+  /* Call-to-Action Button */
   .cta-button {
     padding: 15px 30px;
     background: linear-gradient(145deg, #ff3333, #e60000); /* Glossy red button */
@@ -49,13 +54,32 @@
 
   .cta-button:hover {
     background: linear-gradient(145deg, #e60000, #ff3333); /* Hover effect */
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4); /* More prominent shadow */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4); /* Stronger shadow on hover */
   }
 
+  /* Hero Image */
   .hero-image img {
     max-width: 100%;
     height: auto;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow around image */
+  }
+
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .hero {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .hero-content {
+      max-width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .cta-button {
+      font-size: 1rem;
+      padding: 12px 25px;
+    }
   }
 </style>
