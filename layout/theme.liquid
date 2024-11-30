@@ -18,7 +18,7 @@
   <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
 
   <!-- Other meta tags or custom scripts -->
-  {{ content_for_header }} <!-- Added this tag to include necessary header content -->
+  {{ content_for_header }} <!-- Include header content -->
 </head>
 
 <body>
@@ -28,7 +28,7 @@
 
   <!-- Main Content -->
   <main id="content" class="site-content">
-    {% section 'hero' %}
+    {% section 'hero' %} <!-- Hero Section Only Once -->
     {% section 'featured-products' %}
     {% section 'latest-blog-posts' %}
     {% section 'cta-section' %}
@@ -38,7 +38,7 @@
     {% section 'wishlist' %}
   </main>
 
-  {{ content_for_layout }} <!-- This should be added here -->
+  {{ content_for_layout }} <!-- Content for layout -->
 
   <!-- Include Footer Section -->
   {% section 'footer' %}
@@ -55,6 +55,6 @@
 
   <!-- Additional Scripts or Footer Customizations -->
   {{ content_for_footer }}
-  
+
 </body>
 </html>
