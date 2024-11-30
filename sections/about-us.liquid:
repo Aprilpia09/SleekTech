@@ -14,3 +14,77 @@
     </div>
   </div>
 </section>
+
+<style>
+  /* About Us Section */
+  .about-us {
+    background-color: #fff; /* White background for a clean look */
+    padding: 60px 20px;
+    color: #333; /* Dark text for readability */
+  }
+
+  .about-us .section-header {
+    margin-bottom: 40px;
+  }
+
+  .about-us .section-title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+  }
+
+  .about-us .section-description {
+    font-size: 18px;
+    color: #666;
+    margin-top: 10px;
+  }
+
+  .about-us .about-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .about-us .about-text {
+    flex: 1;
+  }
+
+  .about-us .about-text h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+  }
+
+  .about-us .about-text p {
+    font-size: 16px;
+    color: #666;
+    margin-top: 15px;
+  }
+
+  .about-us .about-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+
+  .about-us .about-image img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Responsive Design for Smaller Screens */
+  @media (max-width: 768px) {
+    .about-us .about-content {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .about-us .about-image img {
+      max-width: 100%;
+      margin-top: 20px;
+    }
+  }
+</style>
