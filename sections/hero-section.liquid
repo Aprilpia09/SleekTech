@@ -6,7 +6,11 @@
     <a href="{{ settings.hero_button_link }}" class="cta-button">{{ settings.hero_button_text }}</a>
   </div>
   <div class="hero-image">
-    <img src="{{ settings.hero_image | img_url: 'original' }}" alt="Hero Image">
+    {% if settings.hero_image %}
+      <img src="{{ settings.hero_image | img_url: 'original' }}" alt="Hero Image">
+    {% else %}
+      <img src="https://via.placeholder.com/1200x600" alt="Hero Image Placeholder">
+    {% endif %}
   </div>
 </section>
 
@@ -29,7 +33,7 @@
   .hero h1 {
     font-size: 4rem;
     font-weight: bold;
-    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Glossy text effect */
   }
 
   .hero p {
@@ -40,32 +44,32 @@
 
   .cta-button {
     padding: 15px 30px;
-    background: linear-gradient(145deg, #ff3333, #e60000);
+    background: linear-gradient(145deg, #ff3333, #e60000); /* Glossy red button */
     color: white;
     text-decoration: none;
     font-size: 1.1rem;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Soft shadow */
     transition: background 0.3s ease, box-shadow 0.3s ease;
   }
 
   .cta-button:hover {
-    background: linear-gradient(145deg, #e60000, #ff3333);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
+    background: linear-gradient(145deg, #e60000, #ff3333); /* Hover effect */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4); /* Stronger shadow on hover */
   }
 
   .hero-image img {
     max-width: 100%;
     height: auto;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow around image */
   }
 </style>
 
 <!-- Schema Code (this goes at the bottom) -->
 {% schema %}
 {
-  "name": "Home Section",
+  "name": "Hero Section",
   "settings": [
     {
       "type": "text",
