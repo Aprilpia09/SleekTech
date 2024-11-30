@@ -1,11 +1,13 @@
 <section class="footer">
   <div class="footer-content">
+    <!-- About Us Section -->
     <div class="footer-left">
       <h4>About Us</h4>
-      <p>{{ 'Learn more about our story, values, and products.' }}</p>
+      <p>Learn more about our story, values, and products.</p>
       <a href="/pages/about-us" class="cta-button">Read More</a>
     </div>
 
+    <!-- Quick Links Section -->
     <div class="footer-center">
       <h4>Quick Links</h4>
       <ul>
@@ -16,6 +18,7 @@
       </ul>
     </div>
 
+    <!-- Follow Us Section -->
     <div class="footer-right">
       <h4>Follow Us</h4>
       <ul class="social-media">
@@ -26,7 +29,130 @@
     </div>
   </div>
 
+  <!-- Footer Bottom -->
   <div class="footer-bottom">
     <p>&copy; {{ 'now' | date: '%Y' }} Your Store Name. All Rights Reserved.</p>
   </div>
 </section>
+
+<style>
+  /* Footer Styling */
+  .footer {
+    background-color: #333;
+    color: white;
+    padding: 40px 0;
+    font-family: Arial, sans-serif;
+  }
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+
+  /* Left Section (About Us) */
+  .footer-left {
+    width: 30%;
+  }
+
+  .footer-left h4 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  .footer-left p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+
+  .footer-left .cta-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+
+  .footer-left .cta-button:hover {
+    background-color: #0056b3;
+  }
+
+  /* Center Section (Quick Links) */
+  .footer-center {
+    width: 30%;
+  }
+
+  .footer-center h4 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  .footer-center ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .footer-center li {
+    margin: 5px 0;
+  }
+
+  .footer-center a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+
+  .footer-center a:hover {
+    color: #007bff;
+  }
+
+  /* Right Section (Social Media) */
+  .footer-right {
+    width: 30%;
+  }
+
+  .footer-right h4 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  .social-media {
+    list-style: none;
+    padding: 0;
+  }
+
+  .social-media li {
+    margin: 5px 0;
+  }
+
+  .social-media a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+
+  .social-media a:hover {
+    color: #007bff;
+  }
+
+  /* Footer Bottom */
+  .footer-bottom {
+    text-align: center;
+    font-size: 1rem;
+    color: #aaa;
+  }
+
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .footer-content {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .footer-left, .footer-center, .footer-right {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  }
+</style>
