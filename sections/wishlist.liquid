@@ -1,0 +1,22 @@
+<section class="wishlist-section">
+  <div class="wishlist-content">
+    <h2>Your Wishlist</h2>
+    <p>Save your favorite products for later. Simply add items to your wishlist and access them anytime.</p>
+
+    {% if customer %}
+      {% if customer.tags contains 'wishlist' %}
+        <ul class="wishlist-items">
+          {% for item in customer.tags | split: ',' %}
+            <li>
+              <a href="/products/{{ item | handleize }}">{{ item }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p>Your wishlist is empty. Start adding products you love!</p>
+      {% endif %}
+    {% else %}
+      <p>Please <a href="/account/login">log in</a> to save items to your wishlist.</p>
+    {% endif %}
+  </div>
+</section>
