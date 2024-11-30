@@ -1,20 +1,36 @@
-{
-  "name": "Theme settings",
-  "settings": [
-    {
-      "type": "text",
-      "id": "store_name",
-      "label": "Store Name"
-    },
-    {
-      "type": "color",
-      "id": "primary_color",
-      "label": "Primary Color"
-    },
-    {
-      "type": "image_picker",
-      "id": "hero_image",
-      "label": "Hero Image"
-    }
-  ]
-}
+[
+  {
+    "name": "Hero Section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "hero_title",
+        "label": "Hero Title",
+        "default": "Welcome to Our Store"
+      },
+      {
+        "type": "text",
+        "id": "hero_subtitle",
+        "label": "Hero Subtitle",
+        "default": "Explore our amazing products"
+      },
+      {
+        "type": "url",
+        "id": "hero_button_link",
+        "label": "Hero Button Link",
+        "default": "/collections/all"
+      },
+      {
+        "type": "text",
+        "id": "hero_button_text",
+        "label": "Hero Button Text",
+        "default": "Shop Now"
+      },
+      {
+        "type": "image_picker",
+        "id": "hero_image",
+        "label": "Hero Image"
+      }
+    ]
+  }
+]
