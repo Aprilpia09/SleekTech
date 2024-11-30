@@ -1,0 +1,29 @@
+<section class="cart-section">
+  <div class="cart-container">
+    <h2>Your Shopping Cart</h2>
+    
+    {% if cart.item_count == 0 %}
+      <p>Your cart is currently empty.</p>
+      <a href="/" class="btn">Continue Shopping</a>
+    {% else %}
+      <div class="cart-items">
+        {% for item in cart.items %}
+          <div class="cart-item">
+            <img src="{{ item.image | img_url: 'medium' }}" alt="{{ item.product.title }}">
+            <div class="cart-item-details">
+              <p class="cart-item-title">{{ item.product.title }}</p>
+              <p class="cart-item-quantity">Quantity: {{ item.quantity }}</p>
+              <p class="cart-item-price">{{ item.line_price | money }}</p>
+            </div>
+            <a href="{{ routes.cart_remove_url }}&line={{ forloop.index }}" class="cart-item-remove">Remove</a>
+          </div>
+        {% endfor %}
+      </div>
+
+      <div class="cart-summary">
+        <p>Total: {{ cart.total_price | money }}</p>
+        <a href="{{ routes.checkout_url }}" class="btn checkout-btn">Proceed to Checkout</a>
+      </div>
+    {% endif %}
+  </div>
+</section>
