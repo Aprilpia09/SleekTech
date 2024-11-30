@@ -1,0 +1,38 @@
+<section class="compare-products-section">
+  <div class="compare-products-content">
+    <h2>Compare Products</h2>
+    <p>Select products to compare their features and make the best choice for you.</p>
+
+    {% if compare_list.size > 0 %}
+      <div class="compare-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Feature</th>
+              {% for product in compare_list %}
+                <th>{{ product.title }}</th>
+              {% endfor %}
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Price</td>
+              {% for product in compare_list %}
+                <td>{{ product.price | money }}</td>
+              {% endfor %}
+            </tr>
+            <tr>
+              <td>Availability</td>
+              {% for product in compare_list %}
+                <td>{{ product.available ? "In Stock" : "Out of Stock" }}</td>
+              {% endfor %}
+            </tr>
+            <!-- Add more comparison rows as needed -->
+          </tbody>
+        </table>
+      </div>
+    {% else %}
+      <p>Your comparison list is empty. Add products to start comparing!</p>
+    {% endif %}
+  </div>
+</section>
