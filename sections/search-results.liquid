@@ -1,0 +1,19 @@
+<section class="search-results">
+  <div class="search-container">
+    <h2>Search Results</h2>
+    {% if search.results.size > 0 %}
+      <div class="search-items">
+        {% for product in search.results %}
+          <div class="search-item">
+            <img src="{{ product.image | img_url: 'medium' }}" alt="{{ product.title }}">
+            <p>{{ product.title }}</p>
+            <p>{{ product.price | money }}</p>
+            <a href="{{ product.url }}" class="btn">View Product</a>
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p>No products found for your search.</p>
+    {% endif %}
+  </div>
+</section>
