@@ -7,10 +7,12 @@
   <div class="products-grid">
     {% for product in collections.frontpage.products limit: 4 %}
       <div class="product-item">
-        <a href="{{ product.url }}">
-          <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}">
+        <a href="{{ product.url }}" class="product-link">
+          <div class="product-image">
+            <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}">
+          </div>
           <h3>{{ product.title }}</h3>
-          <p>{{ product.price | money }}</p>
+          <p class="product-price">{{ product.price | money }}</p>
         </a>
       </div>
     {% endfor %}
@@ -18,32 +20,100 @@
 </section>
 
 <style>
+  /* Featured Products Section */
   .featured-products {
     padding: 40px;
-    background-color: #fff;
+    background: linear-gradient(145deg, #f8f9fa, #e9ecef); /* Soft gradient background */
+    border-radius: 10px; /* Rounded corners for modern look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
   }
+
   .section-header {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
   }
+
+  .section-header h2 {
+    font-size: 2.5rem;
+    color: #333;
+    font-weight: bold;
+  }
+
+  .section-header p {
+    font-size: 1.1rem;
+    color: #777;
+  }
+
   .products-grid {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     gap: 20px;
+    flex-wrap: wrap;
   }
+
   .product-item {
     width: 22%;
     text-align: center;
     border: 1px solid #ddd;
-    padding: 10px;
     border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    background-color: #fff; /* White background for product item */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow for elevation */
   }
+
+  .product-item:hover {
+    transform: translateY(-5px); /* Hover effect for subtle elevation */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+  }
+
+  .product-link {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .product-image {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-bottom: 1px solid #ddd;
+  }
+
   .product-item img {
-    max-width: 100%;
-    height: auto;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
   }
+
+  .product-item img:hover {
+    transform: scale(1.1); /* Zoom effect on hover */
+  }
+
   .product-item h3 {
-    font-size: 18px;
+    font-size: 1.25rem;
+    margin-top: 15px;
+    color: #333;
+  }
+
+  .product-price {
+    font-size: 1.2rem;
+    color: #e60000; /* Glossy red for price */
+    font-weight: bold;
     margin-top: 10px;
+  }
+
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .products-grid {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .product-item {
+      width: 80%;
+      margin-bottom: 20px;
+    }
   }
 </style>
