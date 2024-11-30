@@ -7,28 +7,27 @@
   <title>{{ page_title }}</title>
   <meta name="description" content="{{ shop.meta_description }}">
 
-  <!-- Shopify Meta tags -->
+  <!-- Add necessary Shopify meta tags -->
   <meta name="shopify-digital-wallet" content="yes">
   <meta name="shopify-checkout-api-token" content="{{ checkout.token }}">
 
   <!-- CSS Links -->
   <link href="{{ 'theme.css' | asset_url }}" rel="stylesheet" type="text/css">
 
-  <!-- JavaScript -->
+  <!-- Scripts -->
   <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
 
-  <!-- Include content for header -->
-  {{ content_for_header }}
+  <!-- Other meta tags or custom scripts -->
+  {{ content_for_header }} <!-- Added this tag to include necessary header content -->
 </head>
 
 <body>
-
-  <!-- Header Section -->
+  <!-- Include Header Section -->
   {% section 'header' %}
-  
+
   <!-- Main Content -->
   <main id="content" class="site-content">
-    {% section 'home-section' %} <!-- Added the home-section here -->
+    {% section 'hero' %}
     {% section 'featured-products' %}
     {% section 'latest-blog-posts' %}
     {% section 'cta-section' %}
@@ -37,21 +36,24 @@
     {% section 'compare-products' %}
     {% section 'wishlist' %}
   </main>
-  
-  <!-- Footer Section -->
+
+  <!-- Add content_for_layout to include dynamic content from pages or other sections -->
+  {{ content_for_layout }} <!-- This should be added here -->
+
+  <!-- Include Footer Section -->
   {% section 'footer' %}
-  
-  <!-- Privacy Policy, Shipping/Returns, etc. -->
+
+  <!-- Include Privacy Policy and other necessary links -->
   {% section 'privacy-policy' %}
   {% section 'shipping-returns' %}
   {% section 'faq' %}
   {% section 'contact-us' %}
-  
-  <!-- Login/Register and Cart -->
+
+  <!-- Other necessary sections such as login/register, cart, etc. -->
   {% section 'login-register' %}
   {% section 'cart' %}
-  
-  <!-- Footer Customizations -->
+
+  <!-- Additional Scripts or Footer Customizations -->
   {{ content_for_footer }}
   
 </body>
