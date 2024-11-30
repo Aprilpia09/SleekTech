@@ -4,14 +4,14 @@
 <header>
   <!-- Your logo and other header content -->
   <div class="header-logo">
-    <a href="/">SleekTech</a>
+    <a href="/" aria-label="Go to homepage">SleekTech</a>
   </div>
 
   <!-- Dynamic Navigation Menu -->
   <nav>
     <ul>
       {% for link in linklists.main-menu.links %}
-        <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+        <li><a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a></li>
       {% endfor %}
     </ul>
   </nav>
@@ -34,6 +34,7 @@
     z-index: 100;
     text-decoration: none;
     font-weight: bold;
+    border-radius: 5px;
   }
 
   .skip-to-content:focus {
@@ -59,7 +60,20 @@
     font-weight: bold;
   }
 
-  nav ul li a:hover {
+  nav ul li a:hover,
+  nav ul li a:focus {
     color: #ff3333;
+  }
+
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    nav ul {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    nav ul li {
+      margin-bottom: 10px;
+    }
   }
 </style>
