@@ -2,6 +2,7 @@
   <div class="login-register-content">
     <h2>Login or Register</h2>
 
+    <!-- Login Form -->
     <div class="login-form">
       <h3>Login to your account</h3>
       <form method="post" action="/account/login" class="login-form">
@@ -22,6 +23,7 @@
       </div>
     </div>
 
+    <!-- Register Form -->
     <div class="register-form">
       <h3>Or Register for a new account</h3>
       <form method="post" action="/account" class="register-form">
@@ -40,48 +42,92 @@
 </section>
 
 <style>
+  /* Main container style */
   .login-register {
     padding: 30px;
     background-color: #f9f9f9;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    margin: 0 auto;
   }
+
+  /* Header of the section */
   .login-register-content h2 {
     text-align: center;
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 30px;
+  }
+
+  /* Login and Register Form Styles */
+  .login-form, .register-form {
+    margin-bottom: 40px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .login-form h3, .register-form h3 {
+    font-size: 1.5rem;
+    color: #333;
     margin-bottom: 20px;
   }
+
   .input-group {
     margin-bottom: 15px;
   }
+
   .input-group label {
     display: block;
     font-weight: bold;
+    color: #555;
   }
+
   .input-group input {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     border: 1px solid #ddd;
     border-radius: 5px;
     font-size: 14px;
+    margin-top: 5px;
   }
+
   .btn {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 12px 25px;
     background-color: #007bff;
     color: #fff;
     border-radius: 5px;
     text-align: center;
     cursor: pointer;
     font-weight: bold;
+    width: 100%;
   }
+
+  .btn:hover {
+    background-color: #0056b3;
+  }
+
+  /* Footer with links */
   .login-footer {
     text-align: center;
-  }
-  .login-footer p {
     font-size: 14px;
+    color: #555;
   }
+
+  .login-footer p {
+    margin: 10px 0;
+  }
+
   .login-footer a {
     color: #007bff;
     text-decoration: none;
+    font-weight: bold;
+  }
+
+  .login-footer a:hover {
+    text-decoration: underline;
   }
 </style>
