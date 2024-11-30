@@ -1,0 +1,25 @@
+<header class="site-header">
+  <div class="header-container">
+    <div class="logo">
+      <a href="/">
+        <img src="{{ 'logo.png' | asset_url }}" alt="Your Store Name">
+      </a>
+    </div>
+    
+    <nav class="navigation">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/collections/all">Shop</a></li>
+        <li><a href="/pages/about-us">About Us</a></li>
+        <li><a href="/pages/contact-us">Contact</a></li>
+      </ul>
+    </nav>
+    
+    <div class="cart-icon">
+      <a href="/cart">
+        <img src="{{ 'cart-icon.png' | asset_url }}" alt="Cart">
+        <span>{{ cart.item_count }}</span>
+      </a>
+    </div>
+  </div>
+</header>
