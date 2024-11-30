@@ -5,7 +5,7 @@
     <a href="{{ shop.url }}/collections/all" class="cta-button">Shop Now</a>
   </div>
   <div class="hero-image">
-    <img src="{{ 'hero-image.jpg' | asset_url }}" alt="Hero Image">
+    <img src="{{ settings.hero_image | img_url: 'large' }}" alt="{{ shop.name }} Hero">
   </div>
 </section>
 
