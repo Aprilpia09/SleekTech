@@ -1,4 +1,3 @@
-
 // Smooth Scrolling for Anchor Links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -25,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // Sticky Navigation Bar
 window.onscroll = function () { stickyNavbar() };
 
-var navbar = document.getElementById("navbar");
+var navbar = document.querySelector('header'); // Select the header for sticky navigation
 var sticky = navbar ? navbar.offsetTop : 0;
 
 function stickyNavbar() {
@@ -37,12 +36,12 @@ function stickyNavbar() {
 }
 
 // Mobile Menu Toggle
-const menuToggle = document.querySelector('.menu-toggle');
-const navMenu = document.querySelector('.nav-menu');
+const menuToggle = document.querySelector('.hamburger-menu'); // Updated to match the new class
+const navMenu = document.querySelector('.main-nav'); // Assuming the main navigation menu has this class
 
 if (menuToggle) {
     menuToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
+        navMenu.classList.toggle('active'); // Toggle the active class for mobile menu
     });
 }
 
