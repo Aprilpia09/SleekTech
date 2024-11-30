@@ -1,0 +1,35 @@
+<section class="contact-us">
+  <div class="section-header text-center">
+    <h2 class="section-title">Contact Us</h2>
+    <p class="section-description">We'd love to hear from you! Get in touch with us for any questions or support.</p>
+  </div>
+
+  <div class="contact-form">
+    <form method="POST" action="/contact#contact_form" id="contact_form">
+      <div class="form-group">
+        <label for="contact_name">Your Name</label>
+        <input type="text" name="contact[name]" id="contact_name" placeholder="Your Name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="contact_email">Your Email</label>
+        <input type="email" name="contact[email]" id="contact_email" placeholder="Your Email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="contact_message">Your Message</label>
+        <textarea name="contact[body]" id="contact_message" placeholder="Your Message" rows="4" required></textarea>
+      </div>
+
+      <div class="form-group text-center">
+        <button type="submit" class="cta-button">Send Message</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="contact-info">
+    <p>Or reach us directly at:</p>
+    <p>Email: <a href="mailto:support@yourstore.com">support@yourstore.com</a></p>
+    <p>Phone: +1 (234) 567-890</p>
+  </div>
+</section>
