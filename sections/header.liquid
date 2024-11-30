@@ -1,115 +1,65 @@
-<header class="site-header">
-  <div class="header-container">
-    <!-- Logo Section -->
-    <div class="logo">
-      <a href="/">
-        <img src="{{ 'logo.png' | asset_url }}" alt="Your Store Name">
-      </a>
-    </div>
-    
-    <!-- Navigation Menu -->
-    <nav class="navigation">
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/collections/all">Shop</a></li>
-        <li><a href="/pages/about-us">About Us</a></li>
-        <li><a href="/pages/contact-us">Contact</a></li>
-      </ul>
-    </nav>
-    
-    <!-- Cart Icon -->
-    <div class="cart-icon">
-      <a href="/cart">
-        <img src="{{ 'cart-icon.png' | asset_url }}" alt="Cart">
-        <span>{{ cart.item_count }}</span> <!-- Display the number of items in the cart -->
-      </a>
-    </div>
+<!-- Skip to Content Link -->
+<a href="#main-content" class="skip-to-content">Skip to content</a>
+
+<header>
+  <!-- Your logo and other header content -->
+  <div class="header-logo">
+    <a href="/">SleekTech</a>
   </div>
+
+  <!-- Dynamic Navigation Menu -->
+  <nav>
+    <ul>
+      {% for link in linklists.main-menu.links %}
+        <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </nav>
 </header>
 
+<!-- Main content section -->
+<main id="main-content">
+  <!-- All your content will go here, for example, homepage, product pages, etc. -->
+</main>
+
 <style>
-  /* Header Styles */
-  .site-header {
-    background-color: #333;
-    color: white;
-    padding: 20px 0;
-    font-family: Arial, sans-serif;
-  }
-
-  .header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-
-  /* Logo Section */
-  .logo img {
-    width: 150px;
-    height: auto;
-  }
-
-  /* Navigation Menu */
-  .navigation ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-  }
-
-  .navigation li {
-    display: inline;
-  }
-
-  .navigation a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.1rem;
-    font-weight: 500;
-    transition: color 0.3s;
-  }
-
-  .navigation a:hover {
-    color: #007bff; /* Color change on hover */
-  }
-
-  /* Cart Icon */
-  .cart-icon {
-    position: relative;
-  }
-
-  .cart-icon img {
-    width: 30px;
-    height: 30px;
-  }
-
-  .cart-icon span {
+  /* Skip to Content Styles */
+  .skip-to-content {
     position: absolute;
-    top: -5px;
-    right: -5px;
-    background-color: #e60000;
+    top: -40px;
+    left: 10px;
+    background-color: #ff3333;
     color: white;
-    border-radius: 50%;
-    padding: 2px 6px;
-    font-size: 0.9rem;
+    padding: 10px;
+    z-index: 100;
+    text-decoration: none;
+    font-weight: bold;
   }
 
-  /* Responsive Styles */
-  @media (max-width: 768px) {
-    .header-container {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
+  .skip-to-content:focus {
+    top: 10px;
+  }
 
-    .navigation ul {
-      flex-direction: column;
-      margin-top: 20px;
-    }
+  /* Navigation Menu Styles */
+  nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
 
-    .navigation li {
-      margin-bottom: 10px;
-    }
+  nav ul li {
+    margin-right: 20px;
+  }
+
+  nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  nav ul li a:hover {
+    color: #ff3333;
   }
 </style>
