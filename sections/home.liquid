@@ -1,3 +1,4 @@
+<!-- Hero Section -->
 <section class="hero-section">
   <div class="hero-container">
     <h1>Welcome to Our Premium Store</h1>
@@ -6,6 +7,7 @@
   </div>
 </section>
 
+<!-- Featured Products Section -->
 <section class="featured-products">
   <div class="section-header">
     <h2>Featured Products</h2>
@@ -23,3 +25,102 @@
     {% endfor %}
   </div>
 </section>
+
+<style>
+  /* Hero Section Styling */
+  .hero-section {
+    background: linear-gradient(145deg, #1a1a1a, #333); /* Dark background gradient */
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+  }
+
+  .hero-container h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  .hero-container p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+  }
+
+  .hero-btn {
+    padding: 15px 30px;
+    background: #ff3333;
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .hero-btn:hover {
+    background: #e60000;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
+  }
+
+  /* Featured Products Section Styling */
+  .featured-products {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+  }
+
+  .section-header h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .section-header p {
+    font-size: 1.1rem;
+    margin-top: 10px;
+  }
+
+  .product-cards {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .product-card {
+    background-color: white;
+    width: 250px;
+    text-align: center;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+  }
+
+  .product-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .product-card p {
+    font-size: 1rem;
+    margin: 10px 0;
+  }
+
+  .product-card .btn {
+    padding: 10px 20px;
+    background: #ff3333;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+
+  .product-card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .product-card .btn:hover {
+    background: #e60000;
+  }
+</style>
