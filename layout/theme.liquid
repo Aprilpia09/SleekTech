@@ -1,60 +1,73 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- Section Layout Code -->
+<section class="hero">
+  <div class="hero-content">
+    <!-- Use hero_title with fallback to default -->
+    <h1>{{ settings.hero_title | default: 'Welcome to Our Store' }}</h1>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ page_title }}</title>
-  <meta name="description" content="{{ shop.meta_description }}">
+    <!-- Use hero_subtitle with fallback to default -->
+    <p>{{ settings.hero_subtitle | default: 'Explore our amazing products' }}</p>
 
-  <!-- Add necessary Shopify meta tags -->
-  <meta name="shopify-digital-wallet" content="yes">
-  <meta name="shopify-checkout-api-token" content="{{ checkout.token }}">
+    <!-- Call to action button with fallback to default link -->
+    <a href="{{ settings.hero_button_link | default: '/collections/all' }}" class="cta-button">{{ settings.hero_button_text | default: 'Shop Now' }}</a>
+  </div>
 
-  <!-- CSS Links -->
-  <link href="{{ 'theme.css' | asset_url }}" rel="stylesheet" type="text/css">
+  <div class="hero-image">
+    {% if settings.hero_image %}
+      <img src="{{ settings.hero_image | img_url: 'original' }}" alt="Hero Image">
+    {% else %}
+      <img src="https://via.placeholder.com/1200x600" alt="Hero Image Placeholder">
+    {% endif %}
+  </div>
+</section>
 
-  <!-- Scripts -->
-  <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
+<style>
+  /* Hero Section Styles */
+  .hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 20px;
+    background: linear-gradient(145deg, #1a1a1a, #333); /* Dark gradient background */
+    color: white;
+  }
 
-  <!-- Other meta tags or custom scripts -->
-  {{ content_for_header }} <!-- Added this tag to include necessary header content -->
-</head>
+  .hero-content {
+    max-width: 50%;
+    text-align: left;
+  }
 
-<body>
-  <!-- Include Header Section -->
-  {% section 'header' %}
+  .hero h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Glossy text effect */
+  }
 
-  <!-- Main Content -->
-  <main id="content" class="site-content">
-    {% section 'hero' %}
-    {% section 'featured-products' %}
-    {% section 'latest-blog-posts' %}
-    {% section 'cta-section' %}
-    {% section 'reviews' %}
-    {% section 'testimonials' %}
-    {% section 'compare-products' %}
-    {% section 'wishlist' %}
-  </main>
+  .hero p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
 
-  <!-- Add content_for_layout to include dynamic content from pages or other sections -->
-  {{ content_for_layout }} <!-- This should be added here -->
+  .cta-button {
+    padding: 15px 30px;
+    background: linear-gradient(145deg, #ff3333, #e60000); /* Glossy red button */
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Soft shadow */
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+  }
 
-  <!-- Include Footer Section -->
-  {% section 'footer' %}
+  .cta-button:hover {
+    background: linear-gradient(145deg, #e60000, #ff3333); /* Hover effect */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4); /* Stronger shadow on hover */
+  }
 
-  <!-- Include Privacy Policy and other necessary links -->
-  {% section 'privacy-policy' %}
-  {% section 'shipping-returns' %}
-  {% section 'faq' %}
-  {% section 'contact-us' %}
-
-  <!-- Other necessary sections such as login/register, cart, etc. -->
-  {% section 'login-register' %}
-  {% section 'cart' %}
-
-  <!-- Additional Scripts or Footer Customizations -->
-  {{ content_for_footer }}
-  
-</body>
-</html>
+  .hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow around image */
+  }
+</style>
