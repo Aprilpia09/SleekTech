@@ -6,7 +6,7 @@
     {% if customer %}
       {% if customer.tags contains 'wishlist' %}
         <ul class="wishlist-items">
-          {% for item in customer.tags | split: ',' %}
+          {% for item in customer.tags %}
             <li>
               <a href="/products/{{ item | handleize }}">{{ item }}</a>
             </li>
