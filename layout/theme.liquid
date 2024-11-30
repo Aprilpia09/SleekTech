@@ -4,92 +4,57 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ page_title }} | SleekTech</title>
-
-  <!-- Link to the theme styles (CSS) -->
-  <link href="{{ 'theme.css' | asset_url }}" rel="stylesheet">
-
-  <!-- Favicon (Optional) -->
-  <link rel="icon" type="image/png" href="{{ 'favicon.png' | asset_url }}">
-
-  <!-- Add any other meta tags or custom CSS links here -->
+  <title>{{ page_title }}</title>
   <meta name="description" content="{{ shop.meta_description }}">
 
-  <!-- Open Graph meta tags for better social sharing -->
-  <meta property="og:title" content="{{ page_title }} | SleekTech">
-  <meta property="og:description" content="{{ shop.meta_description }}">
-  <meta property="og:image" content="{{ shop.logo | img_url: 'original' }}">
-  <meta property="og:url" content="{{ shop.url }}">
+  <!-- Add necessary Shopify meta tags -->
+  <meta name="shopify-digital-wallet" content="yes">
+  <meta name="shopify-checkout-api-token" content="{{ checkout.token }}">
 
-  {{ content_for_header }} <!-- Shopify's required content for headers, like meta tags and scripts -->
+  <!-- CSS Links -->
+  <link href="{{ 'theme.css' | asset_url }}" rel="stylesheet" type="text/css">
 
-  <!-- Include Product Schema (from snippets) -->
-  {% render 'product-schema' %} <!-- This ensures SEO-friendly structured data for products -->
+  <!-- Scripts -->
+  <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
 
+  <!-- Other meta tags or custom scripts -->
+  {{ content_for_header }}
 </head>
 
 <body>
-  <!-- HEADER -->
-  <header>
-    <nav>
-      <ul class="main-nav">
-        <li><a href="{{ shop.url }}">Home</a></li>
-        <li><a href="{{ shop.url }}/collections/all">Shop</a></li>
-        <li><a href="{{ shop.url }}/pages/about-us">About Us</a></li>
-        <li><a href="{{ shop.url }}/pages/contact">Contact</a></li>
-        <li><a href="{{ shop.url }}/blogs/news">Blog</a></li>
-        <li><a href="{{ shop.url }}/pages/faq">FAQ</a></li>
-      </ul>
-    </nav>
-    <!-- Hamburger Menu for Mobile -->
-    <button class="hamburger-menu" aria-label="Toggle Navigation">
-      <span></span><span></span><span></span>
-    </button>
-  </header>
 
-  <!-- MAIN CONTENT -->
-  <main>
-    {% section 'hero' %} <!-- Hero Section -->
+  <!-- Include Header Section -->
+  {% section 'header' %}
 
-    {% if template == 'product' %}
-      <!-- Product Page -->
-      {% section 'product' %}
-    {% elsif template == 'collection' %}
-      <!-- Collection Page -->
-      {% section 'collection' %}
-    {% elsif template == 'blog' %}
-      <!-- Blog Page -->
-      {% section 'blog' %}
-    {% elsif template == 'search' %}
-      <!-- Search Results Page -->
-      {% section 'search' %}
-    {% elsif template == 'page' %}
-      <!-- Custom Static Page (e.g., About Us, Contact) -->
-      {% section 'page' %}
-    {% else %}
-      <!-- Default Page Rendering -->
-      {{ content_for_layout }}
-    {% endif %}
+  <!-- Main Content -->
+  <main id="content" class="site-content">
+    {% section 'hero' %}
+    {% section 'home' %}
+    {% section 'featured-products' %}
+    {% section 'latest-blog-posts' %}
+    {% section 'cta-section' %}
+    {% section 'reviews' %}
+    {% section 'testimonials' %}
+    {% section 'compare-products' %}
+    {% section 'wishlist' %}
   </main>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>&copy; {{ 'now' | date: '%Y' }} SleekTech. All rights reserved.</p>
-    <nav>
-      <ul>
-        <li><a href="{{ shop.url }}/pages/about-us">About Us</a></li>
-        <li><a href="{{ shop.url }}/pages/contact">Contact</a></li>
-        <li><a href="{{ shop.url }}/pages/privacy-policy">Privacy Policy</a></li>
-        <li><a href="{{ shop.url }}/pages/terms-of-service">Terms of Service</a></li>
-      </ul>
-    </nav>
-  </footer>
+  <!-- Include Footer Section -->
+  {% section 'footer' %}
 
-  <!-- Scripts (JS) -->
-  <script src="{{ 'theme.js' | asset_url }}"></script>
+  <!-- Include Privacy Policy and other necessary links -->
+  {% section 'privacy-policy' %}
+  {% section 'shipping-returns' %}
+  {% section 'faq' %}
+  {% section 'contact-us' %}
 
-  {{ content_for_footer }} <!-- Shopify's required footer content -->
+  <!-- Other necessary sections such as login/register, cart, etc. -->
+  {% section 'login-register' %}
+  {% section 'cart' %}
+
+  <!-- Additional Scripts or Footer Customizations -->
+  {{ content_for_footer }}
+  
 </body>
 
 </html>
-
