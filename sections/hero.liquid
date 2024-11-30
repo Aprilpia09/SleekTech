@@ -13,22 +13,49 @@
   .hero {
     display: flex;
     justify-content: space-between;
-    padding: 20px;
-    background-color: #f4f4f4;
+    align-items: center;
+    padding: 60px 20px;
+    background: linear-gradient(145deg, #1a1a1a, #333);
+    color: white;
   }
+  
   .hero-content {
     max-width: 50%;
+    text-align: left;
   }
+
+  .hero h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Glossy text effect */
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+
   .cta-button {
-    padding: 10px 20px;
-    background-color: #007bff;
+    padding: 15px 30px;
+    background: linear-gradient(145deg, #ff3333, #e60000); /* Glossy red button */
     color: white;
     text-decoration: none;
-    border-radius: 5px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Soft shadow */
+    transition: background 0.3s ease, box-shadow 0.3s ease;
   }
+
+  .cta-button:hover {
+    background: linear-gradient(145deg, #e60000, #ff3333); /* Hover effect */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4); /* More prominent shadow */
+  }
+
   .hero-image img {
     max-width: 100%;
     height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow around image */
   }
 </style>
-
