@@ -1,0 +1,52 @@
+<section class="social-media">
+  <div class="social-media-content">
+    <h2>Follow Us</h2>
+    <p>Stay connected with us on social media for updates, promotions, and more!</p>
+
+    <div class="social-media-icons">
+      <a href="https://www.facebook.com/YourBusiness" target="_blank" aria-label="Facebook">
+        <img src="{{ 'facebook-icon.png' | asset_url }}" alt="Facebook">
+      </a>
+      <a href="https://www.instagram.com/YourBusiness" target="_blank" aria-label="Instagram">
+        <img src="{{ 'instagram-icon.png' | asset_url }}" alt="Instagram">
+      </a>
+      <a href="https://twitter.com/YourBusiness" target="_blank" aria-label="Twitter">
+        <img src="{{ 'twitter-icon.png' | asset_url }}" alt="Twitter">
+      </a>
+      <a href="https://www.linkedin.com/company/YourBusiness" target="_blank" aria-label="LinkedIn">
+        <img src="{{ 'linkedin-icon.png' | asset_url }}" alt="LinkedIn">
+      </a>
+      <a href="https://www.pinterest.com/YourBusiness" target="_blank" aria-label="Pinterest">
+        <img src="{{ 'pinterest-icon.png' | asset_url }}" alt="Pinterest">
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .social-media {
+    text-align: center;
+    padding: 40px 0;
+    background-color: #f8f8f8;
+  }
+  .social-media h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  .social-media p {
+    font-size: 16px;
+    margin-bottom: 25px;
+  }
+  .social-media-icons a {
+    margin: 0 10px;
+    display: inline-block;
+  }
+  .social-media-icons img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease-in-out;
+  }
+  .social-media-icons img:hover {
+    transform: scale(1.1);
+  }
+</style>
