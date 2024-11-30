@@ -1,0 +1,87 @@
+<section class="login-register">
+  <div class="login-register-content">
+    <h2>Login or Register</h2>
+
+    <div class="login-form">
+      <h3>Login to your account</h3>
+      <form method="post" action="/account/login" class="login-form">
+        <div class="input-group">
+          <label for="email">Email</label>
+          <input type="email" name="customer[email]" id="email" placeholder="Enter your email" required>
+        </div>
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input type="password" name="customer[password]" id="password" placeholder="Enter your password" required>
+        </div>
+        <button type="submit" class="btn">Login</button>
+      </form>
+
+      <div class="login-footer">
+        <p>Forgot your password? <a href="/account/reset">Reset it here</a></p>
+        <p>New to our store? <a href="/account/register">Create an account</a></p>
+      </div>
+    </div>
+
+    <div class="register-form">
+      <h3>Or Register for a new account</h3>
+      <form method="post" action="/account" class="register-form">
+        <div class="input-group">
+          <label for="new-email">Email</label>
+          <input type="email" name="customer[email]" id="new-email" placeholder="Enter your email" required>
+        </div>
+        <div class="input-group">
+          <label for="new-password">Password</label>
+          <input type="password" name="customer[password]" id="new-password" placeholder="Enter your password" required>
+        </div>
+        <button type="submit" class="btn">Create Account</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<style>
+  .login-register {
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .login-register-content h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .input-group {
+    margin-bottom: 15px;
+  }
+  .input-group label {
+    display: block;
+    font-weight: bold;
+  }
+  .input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  .login-footer {
+    text-align: center;
+  }
+  .login-footer p {
+    font-size: 14px;
+  }
+  .login-footer a {
+    color: #007bff;
+    text-decoration: none;
+  }
+</style>
