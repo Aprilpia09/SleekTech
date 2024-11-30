@@ -19,4 +19,67 @@
       <p>Please <a href="/account/login">log in</a> to save items to your wishlist.</p>
     {% endif %}
   </div>
+
+  <style>
+    .wishlist-section {
+      padding: 40px;
+      background-color: #f9f9f9;
+    }
+
+    .wishlist-content {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .wishlist-section h2 {
+      font-size: 24px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .wishlist-section p {
+      font-size: 16px;
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    .wishlist-items {
+      list-style: none;
+      padding: 0;
+    }
+
+    .wishlist-items li {
+      margin: 10px 0;
+    }
+
+    .wishlist-items a {
+      color: #007BFF;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .wishlist-items a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .wishlist-section {
+        padding: 20px;
+      }
+
+      .wishlist-section h2 {
+        font-size: 20px;
+      }
+
+      .wishlist-section p {
+        font-size: 14px;
+      }
+
+      .wishlist-items a {
+        font-size: 16px;
+      }
+    }
+  </style>
 </section>
