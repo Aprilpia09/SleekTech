@@ -1,46 +1,117 @@
-[
-  {
-    "name": "Theme settings",
-    "settings": [
-      {
-        "type": "text",
-        "id": "store_name",
-        "label": "Store Name"
-      },
-      {
-        "type": "color",
-        "id": "primary_color",
-        "label": "Primary Color"
-      },
-      {
-        "type": "image_picker",
-        "id": "hero_image",
-        "label": "Hero Image"
-      },
-      {
-        "type": "text",
-        "id": "hero_title",
-        "label": "Hero Title",
-        "default": "Welcome to Our Store"
-      },
-      {
-        "type": "text",
-        "id": "hero_subtitle",
-        "label": "Hero Subtitle",
-        "default": "Explore our amazing products"
-      },
-      {
-        "type": "url",
-        "id": "hero_button_link",
-        "label": "Hero Button Link",
-        "default": "/collections/all"
-      },
-      {
-        "type": "text",
-        "id": "hero_button_text",
-        "label": "Hero Button Text",
-        "default": "Shop Now"
-      }
-    ]
+<!-- Section Layout Code -->
+<section class="hero">
+  <div class="hero-content">
+    <!-- Only use hero_title once -->
+    <h1>{{ settings.hero_title }}</h1>
+
+    <!-- Only use hero_subtitle once -->
+    <p>{{ settings.hero_subtitle }}</p>
+
+    <!-- Call to action button -->
+    <a href="{{ settings.hero_button_link }}" class="cta-button">{{ settings.hero_button_text }}</a>
+  </div>
+
+  <div class="hero-image">
+    {% if settings.hero_image %}
+      <img src="{{ settings.hero_image | img_url: 'original' }}" alt="Hero Image">
+    {% else %}
+      <img src="https://via.placeholder.com/1200x600" alt="Hero Image Placeholder">
+    {% endif %}
+  </div>
+</section>
+
+<style>
+  /* Hero Section Styles */
+  .hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 20px;
+    background: linear-gradient(145deg, #1a1a1a, #333); /* Dark gradient background */
+    color: white;
   }
-]
+
+  .hero-content {
+    max-width: 50%;
+    text-align: left;
+  }
+
+  .hero h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Glossy text effect */
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+
+  .cta-button {
+    padding: 15px 30px;
+    background: linear-gradient(145deg, #ff3333, #e60000); /* Glossy red button */
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Soft shadow */
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .cta-button:hover {
+    background: linear-gradient(145deg, #e60000, #ff3333); /* Hover effect */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4); /* Stronger shadow on hover */
+  }
+
+  .hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow around image */
+  }
+</style>
+
+<!-- Schema Code (this goes at the bottom) -->
+{% schema %}
+{
+  "name": "Hero Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "hero_title",
+      "label": "Hero Title",
+      "default": "Welcome to Our Store"
+    },
+    {
+      "type": "text",
+      "id": "hero_subtitle",
+      "label": "Hero Subtitle",
+      "default": "Explore our amazing products"
+    },
+    {
+      "type": "url",
+      "id": "hero_button_link",
+      "label": "Hero Button Link",
+      "default": "/collections/all"
+    },
+    {
+      "type": "text",
+      "id": "hero_button_text",
+      "label": "Hero Button Text",
+      "default": "Shop Now"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
