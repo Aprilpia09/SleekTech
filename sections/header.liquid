@@ -1,11 +1,13 @@
 <header class="site-header">
   <div class="header-container">
+    <!-- Logo Section -->
     <div class="logo">
       <a href="/">
         <img src="{{ 'logo.png' | asset_url }}" alt="Your Store Name">
       </a>
     </div>
     
+    <!-- Navigation Menu -->
     <nav class="navigation">
       <ul>
         <li><a href="/">Home</a></li>
@@ -15,11 +17,99 @@
       </ul>
     </nav>
     
+    <!-- Cart Icon -->
     <div class="cart-icon">
       <a href="/cart">
         <img src="{{ 'cart-icon.png' | asset_url }}" alt="Cart">
-        <span>{{ cart.item_count }}</span>
+        <span>{{ cart.item_count }}</span> <!-- Display the number of items in the cart -->
       </a>
     </div>
   </div>
 </header>
+
+<style>
+  /* Header Styles */
+  .site-header {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    font-family: Arial, sans-serif;
+  }
+
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* Logo Section */
+  .logo img {
+    width: 150px;
+    height: auto;
+  }
+
+  /* Navigation Menu */
+  .navigation ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+
+  .navigation li {
+    display: inline;
+  }
+
+  .navigation a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+
+  .navigation a:hover {
+    color: #007bff; /* Color change on hover */
+  }
+
+  /* Cart Icon */
+  .cart-icon {
+    position: relative;
+  }
+
+  .cart-icon img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .cart-icon span {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #e60000;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 0.9rem;
+  }
+
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .header-container {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .navigation ul {
+      flex-direction: column;
+      margin-top: 20px;
+    }
+
+    .navigation li {
+      margin-bottom: 10px;
+    }
+  }
+</style>
