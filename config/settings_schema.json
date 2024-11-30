@@ -31,12 +31,6 @@
         "id": "hero_image",
         "label": "Hero Image"
       }
-    ],
-    "presets": [
-      {
-        "name": "Default",
-        "category": "Custom"
-      }
     ]
   }
 ]
