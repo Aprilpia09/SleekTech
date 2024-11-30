@@ -14,38 +14,66 @@
 </div>
 
 <style>
+  /* Container for Latest Blog Posts */
   .latest-blog-posts {
     padding: 40px;
     background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
   }
 
+  /* Heading for the section */
   .latest-blog-posts h2 {
     text-align: center;
+    font-size: 2rem;
+    color: #333;
     margin-bottom: 20px;
   }
 
+  /* List of blog post items */
+  .latest-blog-posts ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
   .blog-post-item {
-    border-bottom: 1px solid #ddd;
     padding: 20px 0;
-    transition: background-color 0.3s ease;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s ease, transform 0.3s ease;
   }
 
   .blog-post-item:hover {
     background-color: #f9f9f9;
+    transform: translateX(10px); /* Slight right shift on hover */
   }
 
+  /* Blog Post link style */
   .blog-post-link {
     text-decoration: none;
     color: #333;
+    display: block;
   }
 
+  /* Blog title style */
   .blog-post-link h3 {
     font-size: 1.2rem;
+    font-weight: bold;
     color: #333;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
   }
 
+  .blog-post-link h3:hover {
+    color: #ff3333; /* Change color on hover */
+  }
+
+  /* Blog post excerpt style */
   .blog-post-excerpt {
     font-size: 1rem;
     color: #555;
+    line-height: 1.6;
   }
 </style>
