@@ -1,7 +1,22 @@
 [
   {
-    "name": "Hero Section",
+    "name": "Theme settings",
     "settings": [
+      {
+        "type": "text",
+        "id": "store_name",
+        "label": "Store Name"
+      },
+      {
+        "type": "color",
+        "id": "primary_color",
+        "label": "Primary Color"
+      },
+      {
+        "type": "image_picker",
+        "id": "hero_image",
+        "label": "Hero Image"
+      },
       {
         "type": "text",
         "id": "hero_title",
@@ -25,11 +40,6 @@
         "id": "hero_button_text",
         "label": "Hero Button Text",
         "default": "Shop Now"
-      },
-      {
-        "type": "image_picker",
-        "id": "hero_image",
-        "label": "Hero Image"
       }
     ]
   }
