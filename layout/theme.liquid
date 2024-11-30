@@ -1,3 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page_title }}</title>
+  <meta name="description" content="{{ shop.meta_description }}">
+
+  <!-- Add necessary Shopify meta tags -->
+  <meta name="shopify-digital-wallet" content="yes">
+  <meta name="shopify-checkout-api-token" content="{{ checkout.token }}">
+
+  <!-- CSS Links -->
+  <link href="{{ 'theme.css' | asset_url }}" rel="stylesheet" type="text/css">
+
+  <!-- Scripts -->
+  <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
+
+  <!-- Other meta tags or custom scripts -->
+  {{ content_for_header }} <!-- Added this tag to include necessary header content -->
+
+</head>
+
 <body>
 
   <!-- Include Header Section -->
@@ -16,7 +40,7 @@
     {% section 'wishlist' %}
   </main>
 
-  {{ content_for_layout }} <!-- Correctly added content_for_layout here -->
+  {{ content_for_layout }} <!-- This should be added here -->
 
   <!-- Include Footer Section -->
   {% section 'footer' %}
@@ -35,3 +59,4 @@
   {{ content_for_footer }}
   
 </body>
+</html>
