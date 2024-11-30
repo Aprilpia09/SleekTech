@@ -1,7 +1,54 @@
 <section class="breadcrumbs">
   <div class="breadcrumbs-container">
-    <a href="/">Home</a> &gt;
-    <a href="{{ collection.url }}">Shop</a> &gt;
-    <span>{{ product.title }}</span>
+    <a href="/" class="breadcrumb-link">Home</a> &gt;
+    <a href="{{ collection.url }}" class="breadcrumb-link">Shop</a> &gt;
+    <span class="breadcrumb-current">{{ product.title }}</span>
   </div>
 </section>
+
+<style>
+  /* Breadcrumbs Section */
+  .breadcrumbs {
+    background-color: #f9f9f9; /* Light gray background for subtle contrast */
+    padding: 15px 0;
+    font-family: Arial, sans-serif; /* Standard font for readability */
+    font-size: 14px;
+    color: #333; /* Dark text color */
+  }
+
+  .breadcrumbs .breadcrumbs-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+  }
+
+  .breadcrumbs .breadcrumb-link {
+    color: #333; /* Dark gray color for links */
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .breadcrumbs .breadcrumb-link:hover {
+    color: #e74c3c; /* Accent red color on hover */
+  }
+
+  .breadcrumbs .breadcrumb-current {
+    font-weight: 600;
+    color: #555; /* Slightly lighter color for the current page */
+  }
+
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .breadcrumbs {
+      padding: 10px 0;
+    }
+
+    .breadcrumbs .breadcrumbs-container {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+</style>
