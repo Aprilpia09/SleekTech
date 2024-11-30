@@ -1,0 +1,19 @@
+<section class="reviews">
+  <div class="reviews-container">
+    <h2>Customer Reviews</h2>
+    <p>See what our customers are saying about their favorite products:</p>
+
+    <ul class="review-list">
+      {% for review in reviews %}
+        <li class="review-item">
+          <h3>{{ review.title }}</h3>
+          <p>"{{ review.content }}"</p>
+          <p><strong>- {{ review.author }}</strong></p>
+          <p>Rating: {{ review.rating }}/5</p>
+        </li>
+      {% endfor %}
+    </ul>
+
+    <p>Have feedback? <a href="/submit-review">Write a review</a></p>
+  </div>
+</section>
