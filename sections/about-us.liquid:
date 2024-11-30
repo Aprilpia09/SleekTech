@@ -1,0 +1,16 @@
+<section class="about-us">
+  <div class="section-header text-center">
+    <h2 class="section-title">About Us</h2>
+    <p class="section-description">We are a team dedicated to bringing you the finest products and an exceptional shopping experience.</p>
+  </div>
+
+  <div class="about-content">
+    <div class="about-text">
+      <h3>Our Mission</h3>
+      <p>Our mission is to provide top-quality products that enrich your life and offer unmatched customer service.</p>
+    </div>
+    <div class="about-image">
+      <img src="{{ 'about-image.jpg' | asset_url }}" alt="About Us">
+    </div>
+  </div>
+</section>
