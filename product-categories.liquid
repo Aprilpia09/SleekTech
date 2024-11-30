@@ -1,0 +1,60 @@
+<section class="product-categories">
+  <div class="section-header">
+    <h2>Shop by Categories</h2>
+    <p>Explore our product categories and find what you love!</p>
+  </div>
+  <div class="categories-grid">
+    {% for collection in collections %}
+      <div class="category-item">
+        <a href="{{ collection.url }}">
+          <img src="{{ collection.image.src | img_url: 'medium' }}" alt="{{ collection.title }}">
+          <h3>{{ collection.title }}</h3>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+<style>
+  .product-categories {
+    padding: 40px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .categories-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .category-item {
+    width: 30%;
+    text-align: center;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+  }
+
+  .category-item:hover {
+    transform: translateY(-5px); /* Subtle hover effect */
+  }
+
+  .category-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .category-item h3 {
+    font-size: 18px;
+    margin-top: 15px;
+    color: #333;
+  }
+</style>
