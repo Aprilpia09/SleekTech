@@ -1,13 +1,12 @@
-<!-- sections/home-section.liquid -->
-
+<!-- Section Layout Code -->
 <section class="hero">
   <div class="hero-content">
     <h1>{{ settings.hero_title }}</h1>
     <p>{{ settings.hero_subtitle }}</p>
-    <a href="{{ settings.hero_button_url }}" class="cta-button">{{ settings.hero_button_text }}</a>
+    <a href="{{ settings.hero_button_link }}" class="cta-button">{{ settings.hero_button_text }}</a>
   </div>
   <div class="hero-image">
-    <img src="{{ settings.hero_image | img_url: 'large' }}" alt="{{ settings.hero_title }}">
+    <img src="{{ settings.hero_image | img_url: 'original' }}" alt="Hero Image">
   </div>
 </section>
 
@@ -30,7 +29,7 @@
   .hero h1 {
     font-size: 4rem;
     font-weight: bold;
-    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Glossy text effect */
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
   }
 
   .hero p {
@@ -41,42 +40,69 @@
 
   .cta-button {
     padding: 15px 30px;
-    background: linear-gradient(145deg, #ff3333, #e60000); /* Glossy red button */
+    background: linear-gradient(145deg, #ff3333, #e60000);
     color: white;
     text-decoration: none;
     font-size: 1.1rem;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Soft shadow */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     transition: background 0.3s ease, box-shadow 0.3s ease;
   }
 
   .cta-button:hover {
-    background: linear-gradient(145deg, #e60000, #ff3333); /* Hover effect */
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4); /* Stronger shadow on hover */
+    background: linear-gradient(145deg, #e60000, #ff3333);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
   }
 
   .hero-image img {
     max-width: 100%;
     height: auto;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow around image */
-  }
-
-  /* Responsive Styles */
-  @media (max-width: 768px) {
-    .hero {
-      flex-direction: column;
-      text-align: center;
-    }
-
-    .hero-content {
-      max-width: 100%;
-      margin-bottom: 20px;
-    }
-
-    .cta-button {
-      font-size: 1rem;
-      padding: 12px 25px;
-    }
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   }
 </style>
+
+<!-- Schema Code (this goes at the bottom) -->
+{% schema %}
+{
+  "name": "Home Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "hero_title",
+      "label": "Hero Title",
+      "default": "Welcome to Our Store"
+    },
+    {
+      "type": "text",
+      "id": "hero_subtitle",
+      "label": "Hero Subtitle",
+      "default": "Explore our amazing products"
+    },
+    {
+      "type": "url",
+      "id": "hero_button_link",
+      "label": "Hero Button Link",
+      "default": "/collections/all"
+    },
+    {
+      "type": "text",
+      "id": "hero_button_text",
+      "label": "Hero Button Text",
+      "default": "Shop Now"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero Image",
+      "default": ""
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
