@@ -1,10 +1,16 @@
 <!-- Section Layout Code -->
 <section class="hero">
   <div class="hero-content">
-    <h1>{{ settings.hero_title }}</h1>
-    <p>{{ settings.hero_subtitle }}</p>
-    <a href="{{ settings.hero_button_link }}" class="cta-button">{{ settings.hero_button_text }}</a>
+    <!-- Use hero_title with fallback to default -->
+    <h1>{{ settings.hero_title | default: 'Welcome to Our Store' }}</h1>
+
+    <!-- Use hero_subtitle with fallback to default -->
+    <p>{{ settings.hero_subtitle | default: 'Explore our amazing products' }}</p>
+
+    <!-- Call to action button with fallback to default link -->
+    <a href="{{ settings.hero_button_link | default: '/collections/all' }}" class="cta-button">{{ settings.hero_button_text | default: 'Shop Now' }}</a>
   </div>
+
   <div class="hero-image">
     {% if settings.hero_image %}
       <img src="{{ settings.hero_image | img_url: 'original' }}" alt="Hero Image">
@@ -65,47 +71,3 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow around image */
   }
 </style>
-
-<!-- Schema Code (this goes at the bottom) -->
-{% schema %}
-{
-  "name": "Hero Section",
-  "settings": [
-    {
-      "type": "text",
-      "id": "hero_title",
-      "label": "Hero Title",
-      "default": "Welcome to Our Store"
-    },
-    {
-      "type": "text",
-      "id": "hero_subtitle",
-      "label": "Hero Subtitle",
-      "default": "Explore our amazing products"
-    },
-    {
-      "type": "url",
-      "id": "hero_button_link",
-      "label": "Hero Button Link",
-      "default": "/collections/all"
-    },
-    {
-      "type": "text",
-      "id": "hero_button_text",
-      "label": "Hero Button Text",
-      "default": "Shop Now"
-    },
-    {
-      "type": "image_picker",
-      "id": "hero_image",
-      "label": "Hero Image"
-    }
-  ],
-  "presets": [
-    {
-      "name": "Default",
-      "category": "Custom"
-    }
-  ]
-}
-{% endschema %}
