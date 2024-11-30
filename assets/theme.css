@@ -5,15 +5,37 @@
   align-items: center; /* Center the logo vertically */
   padding: 20px; /* Add space around the logo */
   margin: 0 auto; /* Center the logo in its container */
-  background-color: #000; /* Background color for the logo area */
+  background-color: #000; /* Black background for the logo area */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for a glossy effect */
+  border-radius: 10px; /* Rounded corners for a modern look */
 }
 
+/* Logo image style */
 .header-logo img {
-  max-width: 200px; /* Set the max size of the logo */
-  height: auto; /* Ensure the logo maintains its aspect ratio */
-  transition: transform 0.3s ease; /* Smooth hover effect */
+  max-width: 200px; /* Set max size of the logo */
+  height: auto; /* Ensure logo maintains its aspect ratio */
+  transition: transform 0.3s ease, filter 0.3s ease; /* Smooth hover effect with filter */
+  filter: brightness(0) invert(1); /* Apply a monochrome effect by default */
 }
 
+/* Hover effect for logo */
 .header-logo img:hover {
   transform: scale(1.05); /* Slightly enlarge logo on hover */
+  filter: brightness(1.2) invert(0); /* Enhance brightness on hover for a glossy effect */
+}
+
+/* Add a smooth transition for the container */
+.header-logo {
+  transition: all 0.3s ease;
+}
+
+/* Optional: Add media queries for responsiveness */
+@media (max-width: 767px) {
+  .header-logo {
+    padding: 10px; /* Adjust padding for mobile screens */
+  }
+
+  .header-logo img {
+    max-width: 150px; /* Reduce the logo size on smaller screens */
+  }
 }
