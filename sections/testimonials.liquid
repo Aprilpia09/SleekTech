@@ -23,17 +23,21 @@
 <style>
   .testimonials {
     padding: 40px;
-    background-color: #f9f9f9;
+    background-color: #f4f4f4;
   }
+
   .section-header {
     text-align: center;
     margin-bottom: 30px;
   }
+
   .testimonial-cards {
     display: flex;
-    justify-content: space-around;
-    gap: 30px;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
   }
+
   .testimonial-card {
     width: 30%;
     background-color: #fff;
@@ -41,14 +45,33 @@
     border: 1px solid #ddd;
     border-radius: 8px;
     text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added animation */
   }
+
+  .testimonial-card:hover {
+    transform: translateY(-5px); /* Slight lift effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+  }
+
   .testimonial-card p {
     font-style: italic;
     font-size: 16px;
+    color: #555;
   }
+
   .testimonial-card h3 {
     font-size: 18px;
     margin-top: 10px;
     font-weight: bold;
+    color: #333;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .testimonial-card {
+      width: 100%;
+      margin-bottom: 20px;
+    }
   }
 </style>
