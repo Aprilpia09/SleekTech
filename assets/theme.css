@@ -1,3 +1,55 @@
+/* Global Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Announcement Bar Styles */
+.announcement-bar {
+  background-color: #333;
+  color: white;
+  font-size: 16px;
+  padding: 10px 0;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+.announcement-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.announcement-content p {
+  margin: 0;
+  flex-grow: 1;
+}
+
+.announcement-link {
+  color: #FFD700;
+  text-decoration: none;
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+.announcement-link:hover {
+  text-decoration: underline;
+}
+
 /* Header Styles */
 .site-header {
   background-color: #222;
@@ -37,4 +89,116 @@
 
 .main-nav ul li a:hover {
   color: #FFD700;
+}
+
+/* Product Section Styles */
+.product-section {
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+}
+
+.product-section h2 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.product-item {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.product-item:hover {
+  transform: translateY(-10px);
+}
+
+.product-item img {
+  max-width: 100%;
+  height: auto;
+}
+
+.product-item h3 {
+  font-size: 18px;
+  margin: 15px 0 10px;
+}
+
+.product-item p {
+  font-size: 16px;
+  color: #333;
+}
+
+/* Footer Styles */
+.site-footer {
+  background-color: #222;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-left img {
+  max-height: 50px;
+}
+
+.footer-right ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.footer-right ul li {
+  margin-left: 30px;
+}
+
+.footer-right ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-right ul li a:hover {
+  color: #FFD700;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .announcement-bar {
+    font-size: 14px;
+  }
+
+  .announcement-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .site-header .header-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
 }
