@@ -1,85 +1,39 @@
-<section class="hero">
-  <div class="hero-content">
-    <h1>{{ shop.name }}</h1>
-    <p>{{ 'Welcome to our store! Explore our amazing products.' }}</p>
-    <a href="{{ shop.url }}/collections/all" class="cta-button">Shop Now</a>
-  </div>
-  <div class="hero-image">
-    <img src="{{ settings.hero_image | img_url: 'large' }}" alt="{{ shop.name }} Hero">
-  </div>
-</section>
+/* Footer Styles */
+.site-footer {
+  background-color: #222;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+}
 
-<style>
-  /* Hero Section Styles */
-  .hero {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 60px 20px;
-    background: linear-gradient(145deg, #1a1a1a, #333); /* Dark gradient background */
-    color: white;
-  }
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
-  /* Hero Content */
-  .hero-content {
-    max-width: 50%;
-    text-align: left;
-  }
+.footer-left img {
+  max-height: 50px;
+}
 
-  /* Heading */
-  .hero h1 {
-    font-size: 4rem;
-    font-weight: bold;
-    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Glossy text effect */
-  }
+.footer-right ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
 
-  /* Subheading */
-  .hero p {
-    font-size: 1.2rem;
-    margin-top: 10px;
-    margin-bottom: 20px;
-  }
+.footer-right ul li {
+  margin-left: 30px;
+}
 
-  /* Call-to-Action Button */
-  .cta-button {
-    padding: 15px 30px;
-    background: linear-gradient(145deg, #ff3333, #e60000); /* Glossy red button */
-    color: white;
-    text-decoration: none;
-    font-size: 1.1rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Soft shadow */
-    transition: background 0.3s ease, box-shadow 0.3s ease;
-  }
+.footer-right ul li a {
+  color: white;
+  text-decoration: none;
+}
 
-  .cta-button:hover {
-    background: linear-gradient(145deg, #e60000, #ff3333); /* Hover effect */
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4); /* Stronger shadow on hover */
-  }
-
-  /* Hero Image */
-  .hero-image img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow around image */
-  }
-
-  /* Responsive Styles */
-  @media (max-width: 768px) {
-    .hero {
-      flex-direction: column;
-      text-align: center;
-    }
-
-    .hero-content {
-      max-width: 100%;
-      margin-bottom: 20px;
-    }
-
-    .cta-button {
-      font-size: 1rem;
-      padding: 12px 25px;
-    }
-  }
-</style>
+.footer-right ul li a:hover {
+  color: #FFD700;
+}
