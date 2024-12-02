@@ -1,41 +1,40 @@
-/* Create a dedicated logo area */
-.header-logo {
+/* Header Styles */
+.site-header {
+  background-color: #222;
+  color: white;
+  padding: 20px 0;
+}
+
+.header-container {
   display: flex;
-  justify-content: center; /* Center the logo horizontally */
-  align-items: center; /* Center the logo vertically */
-  padding: 20px; /* Add space around the logo */
-  margin: 0 auto; /* Center the logo in its container */
-  background-color: #000; /* Black background for the logo area */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for a glossy effect */
-  border-radius: 10px; /* Rounded corners for a modern look */
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-/* Logo image style */
-.header-logo img {
-  max-width: 200px; /* Set max size of the logo */
-  height: auto; /* Ensure logo maintains its aspect ratio */
-  transition: transform 0.3s ease, filter 0.3s ease; /* Smooth hover effect with filter */
-  filter: brightness(0) invert(1); /* Apply a monochrome effect by default */
+.logo img {
+  max-height: 50px;
 }
 
-/* Hover effect for logo */
-.header-logo img:hover {
-  transform: scale(1.05); /* Slightly enlarge logo on hover */
-  filter: brightness(1.2) invert(0); /* Enhance brightness on hover for a glossy effect */
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
 }
 
-/* Add a smooth transition for the container */
-.header-logo {
-  transition: all 0.3s ease;
+.main-nav ul li {
+  margin-left: 30px;
 }
 
-/* Optional: Add media queries for responsiveness */
-@media (max-width: 767px) {
-  .header-logo {
-    padding: 10px; /* Adjust padding for mobile screens */
-  }
+.main-nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
 
-  .header-logo img {
-    max-width: 150px; /* Reduce the logo size on smaller screens */
-  }
+.main-nav ul li a:hover {
+  color: #FFD700;
 }
