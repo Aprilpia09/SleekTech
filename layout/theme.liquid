@@ -18,6 +18,9 @@
   <!-- Shopify required content for layout -->
   {{ content_for_layout }}
 
+  <!-- Announcement Bar Section -->
+  {% section 'announcement-bar' %}
+
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
@@ -35,7 +38,23 @@
     </div>
   </section>
 
-  <!-- Additional content can go here -->
+  <!-- Review Section -->
+  {% section 'reviews' %} <!-- Includes reviews.liquid section -->
+
+  <!-- Featured Products Section -->
+  {% section 'featured-products' %} <!-- Featured Products -->
+
+  <!-- Blog Section -->
+  {% section 'latest-blog-posts' %} <!-- Latest Blog Posts -->
+
+  <!-- Newsletter Signup Section -->
+  {% section 'newsletter-signup' %} <!-- Newsletter Signup -->
+
+  <!-- Payment Options Section -->
+  {% section 'payment-options' %} <!-- Payment Options -->
+
+  <!-- Footer Section -->
+  {% section 'footer' %}
 
   <script src="{{ 'theme.js' | asset_url }}" type="text/javascript"></script>
 </body>
